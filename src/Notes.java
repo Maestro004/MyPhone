@@ -3,33 +3,55 @@ import java.util.Scanner;
 
 public class Notes extends MyPhone{
 
-   private String text;
+   private static String[] notes = new String[100];
 
-    public Notes() {
+    private static int notesCount = 0;
+
+    public static String[] getNotes() {
+        return notes;
     }
 
-    public static String[] name = {};
-
-    public Notes(String text) {
-        this.text = text;
+    public static void setNotes(String[] notes) {
+        Notes.notes = notes;
     }
 
-    public String getText() {
-        return text;
+    public static int getNotesCount() {
+        return notesCount;
     }
 
-    public void setText(String text) {
-        this.text = text;
-
+    public static void setNotesCount(int notesCount) {
+        Notes.notesCount = notesCount;
     }
-    public String[] notes () {
+
+    public void addNote(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Запишите заметки ");
-        String soz = scanner.nextLine();
-        name = Arrays.copyOf(name,name.length+1);
-        name[name.length - 1] = soz;
-        System.out.println(Arrays.toString(name));
-        return name;
+        System.out.println("Записать заметку");
+        String note = scanner.nextLine();
+        notes[notesCount++] = note;
+        System.out.println("Заметка добавлено!");
+    }
 
+    public void printNotes(){
+        for (int i = 0; i < notesCount; i++) {
+            System.out.println((i + 1 )+ "."+ notes[i]);
+
+        }
+    }
+
+    public void deleteNote(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Какую заметку удалить?");
+        int indexDelete  = scanner.nextInt();
+        if(indexDelete > 0 && indexDelete <= notesCount) {
+            for (int i = indexDelete - 1; i < notesCount - 1; i++) {
+                notes[i] = notes[i +1];
+
+            }
+            notesCount--;
+            System.out.println("Удалено.");
+
+        }else{
+            System.out.println("Неправильный номер");
+        }
     }
 }
