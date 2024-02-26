@@ -20,16 +20,17 @@ public class Main {
             System.out.println("  Рабочий стол " +
                     "\n1. Калькулятор"
             +"\n2. Мобильный банк "+
-                    "\n3. Блоктот"+"\n4. Сохраненый");
+                    "\n3. Блоктот"+"\n4. Сохраненные заметки");
 
             switch (sc.nextInt()) {
                 case  1 -> {
+
                     System.out.println("введите первое число: ");
-                    System.out.println(a = sc.nextInt());
+                    a = sc.nextInt();
                     System.out.println("введите операцию (+,-,*,/)");
-                    System.out.println(operation = sc.next().charAt(0));
+                    operation = sc.next().charAt(0);
                     System.out.println("введитк второе число: ");
-                    System.out.println(b = sc.nextInt());
+                    b = sc.nextInt();
                     calculator.getCalculator(a, operation, b);
                 }
                 case 2 -> {
@@ -41,7 +42,7 @@ public class Main {
                     int pin = scanner.nextInt();
                     if ((atmnumber == atmNumber) && (atmPin == pin)) {
                         while (true) {
-                            System.out.println("1. Проверить баланс\n2. Cнять сумму\n3. Внести сумму \n4.перевод\n5. Выход");
+                            System.out.println("1. Проверить баланс\n2. Cнять сумму\n3. Внести сумму \n4. перевод\n5. Выход");
                             System.out.println("Выберите");
                             int choice = scanner.nextInt();
                             if (choice == 1) {

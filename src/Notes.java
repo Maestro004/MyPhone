@@ -24,7 +24,7 @@ public class Notes extends MyPhone{
     }
     public String[] notes () {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("bir soz jazynyz: ");
+        System.out.println("Запишите заметки ");
         String soz = scanner.nextLine();
         name = Arrays.copyOf(name,name.length+1);
         name[name.length - 1] = soz;

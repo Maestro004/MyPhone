@@ -53,9 +53,9 @@ public class Bank extends MyPhone {
     public void translation(double money){
         if (balance>money){
             balance-=money;
-            System.out.println(" success "+money);
+            System.out.println(" Успешный перевод "+money);
         }else {
-            System.err.println("summa nedostatochno");
+            System.err.println("Не достаточно средств!!!");
         }
     }
 
